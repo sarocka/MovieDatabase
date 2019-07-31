@@ -1,0 +1,37 @@
+<div ng-controller="directorsMoviesCtrl">
+ <div class="page-header" style="margin:10px 30px; ">
+  <h1>Filmography</h1>      
+  <h2>{{director.name}}</h2>
+
+	
+	<div class="col-12 col-md-10">
+			
+			
+			
+			<table class="table table-striped">
+				<thead>
+					<tr bgcolor="darkgrey">
+						<th>Title</th>
+						<th>Genre</th>
+						<th>Rating</th>
+						<th>Duration</th>
+						<th colspan="3">Description</th>
+						
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="m in movies">
+						<td>{{m.title}}</td>
+						<td>{{m.genre}}</td>
+						<td>{{m.rating}}</td>
+						<td>{{m.duration}} min</td>
+						<td colspan="3">{{m.description}}</td>
+						
+					
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		</div>

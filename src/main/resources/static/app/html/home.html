@@ -1,0 +1,65 @@
+<div ng-controller="moviesCtrl">
+
+
+
+	
+<div class="page-header form-group col-12 col-md-10" style="margin: 30px 20px; ">
+   <h1><img class="img-fluid" src="app/images/popcorn_logo.jpg" style="heigth:200px; width:200px"> Movie Database</h1>      
+  <h2 align="center"> <i>- Ratings and reviews of new movies and TV shows -</i></h2>
+ 
+</div>
+
+<form class="form-inline">
+ 
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="searchParams" class="sr-only">Search by title/director</label>
+    <input type="text" class="form-control" ng-model="searchParams.titleOrDirector" placeholder="Search by title/director">
+  </div>
+  <button type="submit" class="btn btn-warning mb-2" ng-click="doSearch()">Search</button>
+</form>
+		<div class="col-12 col-md-12">
+			
+			
+			
+			<table class="table table-striped">
+				<thead>
+					<tr bgcolor="darkgrey">
+						<th>Title</th>
+						<th>Genre</th>
+						<th>Rating</th>
+						<th>Duration</th>
+						<th colspan="3">Description</th>
+						<th>Director</th>
+						<th>&nbsp;&nbsp;Actors</th>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="m in movies">
+						<td>{{m.title}}</td>
+						<td>{{m.genre}}</td>
+						<td>{{m.rating}}</td>
+						<td>{{m.duration}} min</td>
+						<td colspan="3">{{m.description}}</td>
+						<td>{{m.directorName}} <button type="button" class="btn btn-link" ng-click="goToDirectorsMovies(m.directorId)"><i class="fas fa-film"></i>&nbsp;filmography</button>
+						</td>
+					<td><button type="button" class="btn btn-link" ng-click="goToMoviesActors(m.id)"><i class="fas fa-film"></i>&nbsp;actors</button></td>
+						<td><button class="btn btn-warning" ng-click="goToComment(m.id)">Comment</button></td>
+						<td><button class="btn btn-warning" ng-click="edit(m.id)">Edit</button></td>
+						<td><button class="btn btn-warning" ng-click="delete(m.id)">Erase</button></td>
+					
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		<div class="btn-group float-right col-12 col-md-12">
+				<button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-warning">Previous</button>
+				<button ng-disabled="pageNum == totalPages - 1" ng-click="changePage(1)" class="btn btn-warning">Next</button>
+			</div>
+			</div>
+		
+		
+		

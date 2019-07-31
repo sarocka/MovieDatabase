@@ -1,0 +1,38 @@
+
+ <div ng-controller="editMovieCtrl">
+ <div class="page-header" style="margin:10px 30px; ">
+  <h1>Edit this movie</h1>      
+  <h2>{{movie.title}}</h2>
+
+ 
+	<form>
+				<div class="form-group">
+					<label>Title</label>
+					<input class="form-control" ng-model="movie.title" />
+				</div>
+				<div class="form-group">
+					<label>Description</label>
+					<input class="form-control" ng-model="movie.description" />
+				</div>
+				
+				<div class="form-group">
+					<label>Director</label>
+					<input class="form-control" ng-model="movie.directorName"/>
+				</div>
+				
+				<div class="form-group">
+					<label>Duration</label>
+					<input class="form-control" ng-model="movie.duration"/>
+				</div>
+				
+				<div class="form-group">
+					<label>Genre</label>
+					<input class="form-control" ng-model="movie.genre"/>
+				</div>
+				
+				
+				
+				<button class="btn btn-warning" ng-click="doEditMovie()">Edit</button>
+			</form>
+		</div>
+		</div>

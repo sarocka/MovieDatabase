@@ -1,0 +1,31 @@
+<div ng-controller="moviesActorsCtrl">
+ 
+ <div class="page-header" style="margin:10px 30px; ">
+  <h1>Cast</h1>      
+  <h2>{{movie.title}}</h2>
+</div>
+ 
+ 
+	
+	<div class="col-12 col-md-2">
+			
+			
+			
+			<table class="table table-striped">
+				<thead>
+					<tr bgcolor="darkgrey">
+						<th>Name</th>
+				
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="a in actors">
+						<td>{{a.name}}</td>
+						
+						
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		</div>
